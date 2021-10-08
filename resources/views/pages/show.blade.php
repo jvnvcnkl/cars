@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
+@section('title',$car->title)
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> @section('title',$car->title) </title>
-</head>
+@section('content')
 
-<body>@section('content')
+{{ $car->title}} is produced by {{$car->producer}} and has {{$car->number_of_doors}} doors.
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        Other cars
+    </a>
 
-    {{ $car->title}} is produced by {{$car->producer}} and has {{$car->number_of_doors}} doors.
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
-    @endsection
-</body>
-
-</html>
+        @foreach($otherCars as $otherCar)
+        <li><a class="dropdown-item" href="{{ route ('car', ['id' => $otherCar->id]) }}">{{$otherCar->title}} {{$otherCar->producer}}</a></li>
+        @endforeach
+    </ul>
+</div>
+@endsection
