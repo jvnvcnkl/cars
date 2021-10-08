@@ -17,12 +17,12 @@ use App\Http\Controllers\CarsController;
 Route::get('/', function () {
     $name = 'Nikola';
     $age = '25';
-    return view('welcome', compact('name', 'age'));
+    return view('pages.welcome', compact('name', 'age'));
 });
 
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('about', function () {
+    return view('pages.about');
 });
 
 
