@@ -23,6 +23,10 @@
         </p>
 
         <a href="/about">about</a>
+        <a href="/cars">cars</a>
+        <a href="">home</a>
+
+
 </body>
 
 </html>
