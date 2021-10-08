@@ -14,7 +14,7 @@
     <ul>
         @foreach($cars as $car)
         <li>
-            {{$car->title}} {{$car->producer}} has {{$car->number_of_doors}} doors.
+            <a href="{{ route ('car', ['id' => $car->id]) }}">{{$car->title}} {{$car->producer}}</a> has {{$car->number_of_doors}} doors.
         </li>
         @endforeach
     </ul>
